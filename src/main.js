@@ -96,10 +96,12 @@ filterXRegion.addEventListener("change", () => {
       showPokemons(filterByRegion(filterXRegion.value, data.pokemon));
       break;
   }
+  
   showModal();
 });
 
 //** AQUI VAMOS A INSERTAR SORT DE A-Z Z-A */
+function showSort(){
 const sortSelect = document.getElementById("sort-pokemons-by");
 
 sortSelect.addEventListener("change", () => {
@@ -116,7 +118,7 @@ sortSelect.addEventListener("change", () => {
   }
   showModal();
 });
-
+}
 //*SORT POR NUMERO DE POKEDEX/
 
 const sortNumberSelect = document.getElementById("sort-by-Num");

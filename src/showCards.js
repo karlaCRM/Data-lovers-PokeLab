@@ -70,46 +70,57 @@ export let showPokemonFeature = (objectData) => {
   <section class="about-pokemon">
     ${objectData.about}
   </section>
-  <table class="stats-pokemon">
-  <tr>
-    <th class="title-table">Stats:</th>
-    <th class="title-table">Encounter;</th>
-    </tr>
-    <tr class:"body-table">
-    <td class="stats-information"> Base attack: ${objectData.stats["base-attack"]}</td>
-    <td class="encounter-information"> Encounter:
-    <td class="stats-information"> Base defense: ${objectData.stats["base-defense"]}</td>
-    <td class="stats-information"> Base stamina: ${objectData.stats["base-stamina"]}</td>
-    </tr>
-  </table>
-  <div class="resistant-and-weaknesses">
-    <div class="resistant">
-      <h2>Resistance:</h2>
-      <div class="type-resistant" id="resistant-pokemon"> ${objectData.resistant
-        .map((type) => `<span class="type-poke ${type}"> ${type} </span>`)
-        .join("")}
-      </div>
-    </div>
-    <div class="resistant">
-      <h2>Weaknesses:</h2>
-      <div class="type-weaknesses" id="weaknesses-pokemon"> ${objectData.weaknesses
-        .map((type) => `<span class="type-poke ${type}"> ${type} </span>`)
-        .join("")}
-      </div>
-    </div>
+  <section id="stat-encounter">
+  <div class="title">
+    <span class="titleButton">Stats:</span>
+    <span class="titleButton">Encounter:</span>
   </div>
+  </section>
+      <section id="info">
+        <div class="izquierda">
+          <span  class="stats"> <strong>B-attack:</strong> ${objectData.stats["base-attack"]}</span >
+          <span  class="stats"> B-defense: ${objectData.stats["base-defense"]}</span >
+          <span  class="stats"> B-stamina: ${objectData.stats["base-stamina"]}</span >
+        </div>
+        <div class="derecha">
+          <span class="stats"> B-Flee rate: ${objectData.encounter["base-flee-rate"]}</span>
+          <span class="stats"> B-Capture rate: ${objectData.encounter["base-capture-rate"]}</span>
+          </div>
+      </section>
+  <section id="resistant-and-weaknesses">
+  <div class="title">
+  <span class="titleButton">Resistance</span>
+  <span class="titleButton">Weaknesses</span>
+  </div>
+    <section class="infoResist-weaknesses">
+        <div class="resist-weaknesses" id="resistant-pokemon"> ${objectData.resistant
+        .map((type) => `<span class="type-poke ${type}"> ${type} </span>`)
+        .join("")}
+         </div>
+        <div class="resist-weaknesses" id="weaknesses-pokemon"> ${objectData.weaknesses
+        .map((type) => `<span class="type-poke ${type}"> ${type} </span>`)
+        .join("")}
+        </div>
+        </section>
+    </section>
   <section class="special-attack">
-    <h2>Special Attack:</h2>
+  <div class="title">
+  <span class="titleButton">Special Attack</span>
+  </div>
     <div class="special-attack-pokemon" id="attack"> ${objectData["special-attack"]
       .map((attack) => `<span class="attack-name"> ${attack.name} </span>`)
       .join("")}
     </div>
   </section>
   <section class="evolution-pokemon">
-    <h2>Evolution:</h2>
-    <div class="evolution-pokemon-1" id="evolution-1"> 
+  <div class="title">
+  <span class="titleButton">Evolutions</span>
+  </div>
+  <section id="evoluciones"
+    <div class="evolution-pokemon" id="evolution"> 
       ${evolutionsTwo(objectData)}
     </div>
+    </section>
   </section>
   </div>
 </section>`
@@ -128,7 +139,7 @@ let evolutionsTwo = (objectData)=>{
   } 
 
   if(actual["prev-evolution"] && actual["next-evolution"]){
-    let nextAndPrevEvolution = `<div class="children-one">
+    let nextAndPrevEvolution = `<div class="first-evolution">
     <h2>Prev Evolution:</h2>
     <p>${actual["prev-evolution"][0].num}</p>
     <p>${actual["prev-evolution"][0].name}</p>
@@ -148,7 +159,7 @@ let evolutionsTwo = (objectData)=>{
   //*Prev Evolutions and item evolution */
 
   if(actual["prev-evolution"] && actual["prev-evolution"][0]["prev-evolution"]){
-    let prevAndPrevEvolution = `<div class="children-one">
+    let prevAndPrevEvolution = `<div class="first-evolution">
     <h2>Prev Evolution:</h2>
     <p>${actual["prev-evolution"][0].num}</p>
     <p>${actual["prev-evolution"][0].name}</p>
@@ -166,7 +177,7 @@ let evolutionsTwo = (objectData)=>{
   } 
 
   if(actual["prev-evolution"] && actual["prev-evolution"][0]["evolution-item"]){
-    let prevAndItemEvolution = `<div class="children-one">
+    let prevAndItemEvolution = `<div class="first-evolution">
     <h2>Prev Evolution:</h2>
     <p>${actual["prev-evolution"][0].num}</p>
     <p>${actual["prev-evolution"][0].name}</p>
@@ -179,7 +190,7 @@ let evolutionsTwo = (objectData)=>{
   } 
 
   if(actual["prev-evolution"]){
-    let preEvolution = `<div class="children-one">
+    let preEvolution = `<div class="first-evolution">
     <h2>Prev Evolution:</h2>
     <p>${actual["prev-evolution"][0].num}</p>
     <p>${actual["prev-evolution"][0].name}</p>
@@ -193,7 +204,7 @@ let evolutionsTwo = (objectData)=>{
 
   //*Next Evolutions and item evolution */
   if(actual["next-evolution"] && actual["next-evolution"][0]["next-evolution"]){
-    let nextAndNextEvolution = `<div class="children-one">
+    let nextAndNextEvolution = `<div class="first-evolution">
     <h2>Next Evolution:</h2>
     <p>${actual["next-evolution"][0].num}</p>
     <p>${actual["next-evolution"][0].name}</p>
@@ -209,7 +220,7 @@ let evolutionsTwo = (objectData)=>{
   } 
 
   if(actual["next-evolution"] && actual["next-evolution"][0]["evolution-item"]){
-    let nextAndItemEvolution = `<div class="children-one">
+    let nextAndItemEvolution = `<div class="first-evolution">
     <h2>Next Evolution:</h2>
     <p>${actual["next-evolution"][0].num}</p>
     <p>${actual["next-evolution"][0].name}</p>
@@ -220,7 +231,7 @@ let evolutionsTwo = (objectData)=>{
   } 
 
   if(actual["next-evolution"]){
-    let nextEvolution = `<div class="children-one">
+    let nextEvolution = `<div class="first-evolution">
     <h2>Next Evolution:</h2>
     <p>${actual["next-evolution"][0].num}</p>
     <p>${actual["next-evolution"][0].name}</p>
