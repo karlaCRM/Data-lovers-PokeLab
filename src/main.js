@@ -16,7 +16,8 @@ import {
 import { cleanClass, validateInput } from "./js/functions.js";
 
 //* Llamamos a la función que mostrara la data*/
-showPokemons(data.pokemon);
+let copyDataPokemon = [...data.pokemon];
+showPokemons(copyDataPokemon);
 showModal();
 
 //* Importamos el contenedor donde añadiremos los tipos de pokemons */
@@ -48,8 +49,9 @@ allCardTypes.forEach((cardType) => {
     /*while (containerForCards.childNodes.length > 2) {
       containerForCards.removeChild(containerForCards.firstChild);
     }*/
-
-    showPokemons(filterByType(nameType, data.pokemon));
+    copyDataPokemon = filterByType(nameType, data.pokemon);
+    //console.log(copyDataPokemon);
+    showPokemons(copyDataPokemon);
     showModal();
     //para limpiar el input del buscador.
     searchInputName.value = "";
@@ -58,7 +60,7 @@ allCardTypes.forEach((cardType) => {
 
 });
 
-/**/
+/*Buscador de pokemon*/
 
 searchInputName.addEventListener("input", () => {
   const arrayContainerCards = document.querySelectorAll(".cuadroPokemon");
@@ -87,13 +89,27 @@ const filterXRegion = document.getElementById("regionName");
 filterXRegion.addEventListener("change", () => {
   switch (filterXRegion.value) {
     case "all":
+      copyDataPokemon = data.pokemon;
       showPokemons(data.pokemon);
+      cleanClass(allCardTypes);
       break;
     case "kanto":
-      showPokemons(filterByRegion(filterXRegion.value, data.pokemon));
+      const variableExtraKanto = filterByRegion(filterXRegion.value, copyDataPokemon);
+      if(variableExtraKanto.length > 0){
+        copyDataPokemon = variableExtraKanto;
+        showPokemons(copyDataPokemon);
+      }else{
+        alert ("No hay pokemons de Kanto");
+      }
       break;
     case "johto":
-      showPokemons(filterByRegion(filterXRegion.value, data.pokemon));
+      const variableExtraJohto = filterByRegion(filterXRegion.value, copyDataPokemon);
+      if(variableExtraJohto.length > 0){
+        copyDataPokemon = variableExtraJohto;
+        showPokemons(copyDataPokemon);
+      }else{
+        alert ("No hay pokemons de Johto");
+      }
       break;
   }
   
@@ -101,24 +117,24 @@ filterXRegion.addEventListener("change", () => {
 });
 
 //** AQUI VAMOS A INSERTAR SORT DE A-Z Z-A */
-function showSort(){
 const sortSelect = document.getElementById("sort-pokemons-by");
 
 sortSelect.addEventListener("change", () => {
   switch (sortSelect.value) {
     case "default":
       showPokemons(data.pokemon);
+      cleanClass(allCardTypes);
       break;
     case "a-z":
-      showPokemons(sortPokemons(data.pokemon));
+      showPokemons(sortPokemons(copyDataPokemon));
       break;
     case "z-a":
-      showPokemons(sortPokemonsInvertido(data.pokemon));
+      showPokemons(sortPokemonsInvertido(copyDataPokemon));
       break;
   }
   showModal();
 });
-}
+
 //*SORT POR NUMERO DE POKEDEX/
 
 const sortNumberSelect = document.getElementById("sort-by-Num");
@@ -126,10 +142,10 @@ const sortNumberSelect = document.getElementById("sort-by-Num");
 sortNumberSelect.addEventListener("change", () => {
   switch (sortNumberSelect.value) {
     case "00-MAX":
-      showPokemons(sortNumber(data.pokemon));
+      showPokemons(sortNumber(copyDataPokemon));
       break;
     case "MAX-00":
-      showPokemons(sortNumberInverted(data.pokemon));
+      showPokemons(sortNumberInverted(copyDataPokemon));
       break;
   }
   showModal();
@@ -154,6 +170,3 @@ function showModal() {
     });
   });
 }
-
-
-
