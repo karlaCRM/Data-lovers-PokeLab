@@ -58,6 +58,9 @@ allCardTypes.forEach((cardType) => {
     showModal();
     subTitlePokemonsLength.innerText = `(${copyDataPokemon.length} results)`
 
+    /*aca reseteamos el selector por región a disabled selected */
+    document.getElementById("regionName").selectedIndex = 1;
+
     //para limpiar el input del buscador.
     searchInputName.value = "";
     document.querySelector("#text-error").style.display = "none";
@@ -120,7 +123,7 @@ filterXRegion.addEventListener("change", () => {
       }
       break;
   }
-  
+
   showModal();
 });
 
