@@ -16,9 +16,12 @@ import {
 import { cleanClass, validateInput } from "./js/functions.js";
 
 //* Llamamos a la función que mostrara la data*/
+const subTitlePokemonsLength = document.getElementById("subtitle-result-pokemon");
 let copyDataPokemon = [...data.pokemon];
 showPokemons(copyDataPokemon);
 showModal();
+subTitlePokemonsLength.innerText = `(${copyDataPokemon.length} results)`
+
 
 //* Importamos el contenedor donde añadiremos los tipos de pokemons */
 const containerForCardTypes = document.getElementById("containerTypes");
@@ -53,6 +56,8 @@ allCardTypes.forEach((cardType) => {
     //console.log(copyDataPokemon);
     showPokemons(copyDataPokemon);
     showModal();
+    subTitlePokemonsLength.innerText = `(${copyDataPokemon.length} results)`
+
     //para limpiar el input del buscador.
     searchInputName.value = "";
     document.querySelector("#text-error").style.display = "none";
@@ -92,14 +97,16 @@ filterXRegion.addEventListener("change", () => {
       copyDataPokemon = data.pokemon;
       showPokemons(data.pokemon);
       cleanClass(allCardTypes);
+      subTitlePokemonsLength.innerText = `(${copyDataPokemon.length} results)`
       break;
     case "kanto":
       const variableExtraKanto = filterByRegion(filterXRegion.value, copyDataPokemon);
       if(variableExtraKanto.length > 0){
         copyDataPokemon = variableExtraKanto;
         showPokemons(copyDataPokemon);
+        subTitlePokemonsLength.innerText = `(${copyDataPokemon.length} results)`
       }else{
-        alert ("No hay pokemons de Kanto");
+        alert ("No pokemon from Kanto");
       }
       break;
     case "johto":
@@ -107,8 +114,9 @@ filterXRegion.addEventListener("change", () => {
       if(variableExtraJohto.length > 0){
         copyDataPokemon = variableExtraJohto;
         showPokemons(copyDataPokemon);
+        subTitlePokemonsLength.innerText = `(${copyDataPokemon.length} results)`
       }else{
-        alert ("No hay pokemons de Johto");
+        alert ("No pokemon from Johto");
       }
       break;
   }
@@ -122,8 +130,10 @@ const sortSelect = document.getElementById("sort-pokemons-by");
 sortSelect.addEventListener("change", () => {
   switch (sortSelect.value) {
     case "default":
+      copyDataPokemon = data.pokemon;
       showPokemons(data.pokemon);
       cleanClass(allCardTypes);
+      subTitlePokemonsLength.innerText = `(${copyDataPokemon.length} results)`
       break;
     case "a-z":
       showPokemons(sortPokemons(copyDataPokemon));
