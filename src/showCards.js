@@ -43,7 +43,7 @@ export let showPokemonFeature = (objectData) => {
   let pokemonFeatures =`<section class="container-features-poke">
   <div class="${objectData.type[0]} childrenOne">
     <section class="container-img-num-name">
-    <div class="generationId">
+    <div id="generationId">
         <span id="id-pokemon">${objectData.num}</span>
         <span id="generation-pokemon">${objectData.generation.name}</span>
         <div class="background"><span class="background"> <img
@@ -94,7 +94,7 @@ export let showPokemonFeature = (objectData) => {
   </div>
     <section class="infoResist-weaknesses">
         <div class="resist-weaknesses" id="resistant-pokemon"> ${objectData.resistant
-        .map((type) => `<span class="type-poke ${type}"> ${type} </span>`)
+        .map((type) => `<span class="type-poke ${type} "> ${type} </span>`)
         .join("")}
          </div>
         <div class="resist-weaknesses" id="weaknesses-pokemon"> ${objectData.weaknesses

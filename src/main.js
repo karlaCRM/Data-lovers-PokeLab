@@ -16,6 +16,7 @@ import {
 import { cleanClass, validateInput } from "./js/functions.js";
 
 //* Llamamos a la función que mostrara la data*/
+
 let copyDataPokemon = [...data.pokemon];
 showPokemons(copyDataPokemon);
 showModal();
@@ -49,10 +50,12 @@ allCardTypes.forEach((cardType) => {
     /*while (containerForCards.childNodes.length > 2) {
       containerForCards.removeChild(containerForCards.firstChild);
     }*/
+
     copyDataPokemon = filterByType(nameType, data.pokemon);
     //console.log(copyDataPokemon);
     showPokemons(copyDataPokemon);
     showModal();
+    
     //para limpiar el input del buscador.
     searchInputName.value = "";
     document.querySelector("#text-error").style.display = "none";
