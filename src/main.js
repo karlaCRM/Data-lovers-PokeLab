@@ -92,6 +92,8 @@ searchInputName.addEventListener("input", () => {
 //** AQUI VA FILTRADO POR REGION */
 
 const filterXRegion = document.getElementById("regionName");
+let variableExtraKanto;
+let variableExtraJohto;
 //console.log(filterXRegion)
 
 filterXRegion.addEventListener("change", () => {
@@ -103,7 +105,7 @@ filterXRegion.addEventListener("change", () => {
       subTitlePokemonsLength.innerText = `(${copyDataPokemon.length} results)`
       break;
     case "kanto":
-      const variableExtraKanto = filterByRegion(filterXRegion.value, copyDataPokemon);
+      variableExtraKanto = filterByRegion(filterXRegion.value, copyDataPokemon);
       if(variableExtraKanto.length > 0){
         copyDataPokemon = variableExtraKanto;
         showPokemons(copyDataPokemon);
@@ -113,7 +115,7 @@ filterXRegion.addEventListener("change", () => {
       }
       break;
     case "johto":
-      const variableExtraJohto = filterByRegion(filterXRegion.value, copyDataPokemon);
+      variableExtraJohto = filterByRegion(filterXRegion.value, copyDataPokemon);
       if(variableExtraJohto.length > 0){
         copyDataPokemon = variableExtraJohto;
         showPokemons(copyDataPokemon);
