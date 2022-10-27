@@ -16,9 +16,12 @@ import {
 import { cleanClass, validateInput } from "./js/functions.js";
 
 //* Llamamos a la función que mostrara la data*/
-let copyDataPokemon= [...data.pokemon];
+const subTitlePokemonsLength = document.getElementById("subtitle-result-pokemon");
+let copyDataPokemon = [...data.pokemon];
 showPokemons(copyDataPokemon);
 showModal();
+subTitlePokemonsLength.innerText = `(${copyDataPokemon.length} results)`
+
 
 //* Importamos el contenedor donde añadiremos los tipos de pokemons */
 const containerForCardTypes = document.getElementById("containerTypes");
@@ -49,9 +52,15 @@ allCardTypes.forEach((cardType) => {
     /*while (containerForCards.childNodes.length > 2) {
       containerForCards.removeChild(containerForCards.firstChild);
     }*/
-    copyDataPokemon = filterByType(nameType, data.pokemon)
+    copyDataPokemon = filterByType(nameType, data.pokemon);
+    //console.log(copyDataPokemon);
     showPokemons(copyDataPokemon);
     showModal();
+    subTitlePokemonsLength.innerText = `(${copyDataPokemon.length} results)`
+
+    /*aca reseteamos el selector por región a disabled selected */
+    document.getElementById("regionName").selectedIndex = 1;
+
     //para limpiar el input del buscador.
     searchInputName.value = "";
     document.querySelector("#text-error").style.display = "none";
@@ -59,7 +68,7 @@ allCardTypes.forEach((cardType) => {
 
 });
 
-/**/
+/*Buscador de pokemon*/
 
 searchInputName.addEventListener("input", () => {
   const arrayContainerCards = document.querySelectorAll(".cuadroPokemon");
@@ -89,32 +98,32 @@ filterXRegion.addEventListener("change", () => {
   switch (filterXRegion.value) {
     case "all":
       copyDataPokemon = data.pokemon;
-      showPokemons(copyDataPokemon);
+      showPokemons(data.pokemon);
       cleanClass(allCardTypes);
-
+      subTitlePokemonsLength.innerText = `(${copyDataPokemon.length} results)`
       break;
     case "kanto":
-      let variableExtraKanto= filterByRegion(filterXRegion.value, copyDataPokemon)
-      if (variableExtraKanto.length > 0){
-        copyDataPokemon = variableExtraKanto
+      const variableExtraKanto = filterByRegion(filterXRegion.value, copyDataPokemon);
+      if(variableExtraKanto.length > 0){
+        copyDataPokemon = variableExtraKanto;
         showPokemons(copyDataPokemon);
-      } 
-      else{
-        alert ("No hay pokemones de la región Kanto")
+        subTitlePokemonsLength.innerText = `(${copyDataPokemon.length} results)`
+      }else{
+        alert ("No pokemon from Kanto");
       }
       break;
     case "johto":
-      let variableExtraJohto= filterByRegion(filterXRegion.value, copyDataPokemon);
+      const variableExtraJohto = filterByRegion(filterXRegion.value, copyDataPokemon);
       if(variableExtraJohto.length > 0){
-        copyDataPokemon= variableExtraJohto
-      showPokemons(copyDataPokemon);
-      } 
-      else{
-        alert ("No hay pokemones de la región Johto")
+        copyDataPokemon = variableExtraJohto;
+        showPokemons(copyDataPokemon);
+        subTitlePokemonsLength.innerText = `(${copyDataPokemon.length} results)`
+      }else{
+        alert ("No pokemon from Johto");
       }
       break;
   }
-  
+
   showModal();
 });
 
@@ -124,8 +133,10 @@ const sortSelect = document.getElementById("sort-pokemons-by");
 sortSelect.addEventListener("change", () => {
   switch (sortSelect.value) {
     case "default":
+      copyDataPokemon = data.pokemon;
       showPokemons(data.pokemon);
       cleanClass(allCardTypes);
+      subTitlePokemonsLength.innerText = `(${copyDataPokemon.length} results)`
       break;
     case "a-z":
       showPokemons(sortPokemons(copyDataPokemon));
@@ -172,6 +183,3 @@ function showModal() {
     });
   });
 }
-
-
-
