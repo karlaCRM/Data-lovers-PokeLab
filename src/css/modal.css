@@ -337,8 +337,8 @@
   .modal-container {
     width: 100%;
     max-width: 80%;
-    max-height: 65%;
-    height: 1280px;
+    min-height: 80vh;
+    height: 100%;
     gap: 20px;
   }
 
