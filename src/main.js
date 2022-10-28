@@ -8,9 +8,7 @@ import {
   filterByType,
   filterByRegion,
   sortPokemons,
-  /*sortPokemonsInvertido,*/
   sortNumber,
-  /*sortNumberInverted,*/
   findById
 } from "./js/data.js";
 import { cleanClass, validateInput } from "./js/functions.js";
@@ -43,7 +41,7 @@ const searchInputName = document.getElementById("input-search-name");
 allCardTypes.forEach((cardType) => {
   cardType.addEventListener("click", () => {
     const nameType = cardType.className.split(" ")[0];
-
+    
     //limpiar la clase borderRed asi en cada click la elimina
     cleanClass(allCardTypes);
     //añade la clase borderRed asi en cada click la elimina
