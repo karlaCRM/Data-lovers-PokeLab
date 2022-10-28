@@ -179,16 +179,42 @@ let sortDataAZ = [
     },
   },
 ];
+let sortDataZA = [
+  {
+    num: "010",
+    name: "caterpie",
+    type: "bug",
+    generation: {
+      num: "generation i",
+      name: "kanto",
+    },
+  },
+  {
+    num: "001",
+    name: "bulbasaur",
+    type: ["grass", "poison"],
+    generation: {
+      num: "generation i",
+      name: "kanto",
+    },
+  },
+];
+
 
 describe("sortPokemons", () => {
   it("es una function", () => {
     expect(typeof sortPokemons).toBe("function");
   });
 
-  it("Debe retornar ondenados de A-Z", () => {
+  it("Debe retornar ordenados de A-Z", () => {
     expect(sortPokemons(sortData)).toEqual(sortDataAZ);
   });
+
+  it("Should return an array of Z-A", () => {
+    expect(sortPokemons(sortData).reverse()).toEqual(sortDataZA)
+  })
 });
+
 
 
 //TEST SORT NÚMEROS
@@ -207,6 +233,13 @@ let arraySortMinMax = [
   { num: "120" },
 ];
 
+let arraySortMaxMin = [
+  { num: "120" },
+  { num: "024" },
+  { num: "012" },
+  { num: "003" },
+];
+
 describe("sortNumber", () => {
   it("es una function", () => {
     expect(typeof sortNumber).toBe("function");
@@ -215,6 +248,10 @@ describe("sortNumber", () => {
   it("Debe retornar ondenados de min al max", () => {
     expect(sortNumber(arraySortNumbers)).toEqual(arraySortMinMax);
   });
+
+  it("Should return an array of max to min", () =>{
+    expect(sortNumber(arraySortNumbers).reverse()).toEqual(arraySortMaxMin)
+  })
 });
 
  
