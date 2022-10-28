@@ -59,7 +59,7 @@ Se muestran aquí el desarrollo que se siguio en el orden en que fue llevado a c
 ![img](src/assets/img-readme/14.png)
 ![img](src/assets/img-readme/15.png)
 
-[![Alt text](https://youtu.be/60dK7bRt_1o)
+[![Alt text](src/assets/img-readme/13.png)](https://www.youtube.com/watch?v=60dK7bRt_1o)
 
 ### Testeos de usabilidad
 
