@@ -58,23 +58,18 @@ Se muestran aquí el desarrollo que se siguio en el orden en que fue llevado a c
 ![img](src/assets/img-readme/13.png)
 ![img](src/assets/img-readme/14.png)
 ![img](src/assets/img-readme/15.png)
-
+[video](src/assets/img-readme/screen-recording.webm)
 
 
 ### Testeos de usabilidad
 
 Se realizo un último testeo de usabilidad con el producto en un 90% terminado para cersiorarnos que el usuario pudiera manipularlo sin perderse o encontrar posibles fallas. 
 
+
+
 ## 5. Trello:
 
 Antes de comenzar el prototipado de Alta calidad  se realizo en trello el esquema de tareas/trabajo que realizariamos, dividiendo las tareas mediante etiquetas por historias de usuario y cada paso a seguir para considerarlas terminadas. 
 
-**Aquí se encuentra el vinculo a nuestro trello :)**
-
-![url](https://trello.com/invite/b/RvxCEm0d/80580287820bed0f1303ef25be7413fc/pokelab)
 
 ![img](src/assets/img-readme/16.png)
-
-
-
-

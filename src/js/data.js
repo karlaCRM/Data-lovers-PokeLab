@@ -16,9 +16,9 @@ export const filterByRegion = (selection, pokemonData) => {
 
 //*aqui va el sort*/
 
-export const sortPokemons = (pokemonData) => {
-  let copyData = [...pokemonData];
-  const pokemonSort = copyData.sort((prev, next) => {
+export const sortPokemons = (dataHarrypotter) => {
+  let copyarray = [...dataHarryPotter];
+  const pokemonSort = copyarray.sort((prev, next) => {
     if (prev.name < next.name) {
       return -1;
     } 
@@ -44,6 +44,17 @@ export const sortNumber = (pokemonData)=>{
 export const findById = (id, pokemonData) => {
   const findbyidPokemon = pokemonData.find(
   (pokemon)=> pokemon.num == id);
-  //console.log(findbyidPokemon);
+  console.log(findbyidPokemon);
   return findbyidPokemon;
 };
+
+
+const porcentajeTotalPokemones = (nameType, pokemonData) =>{
+  const totalPokemons = pokemonData.reduce((pokemon, currentvalue) =>{
+    return acumulador + currentvalue
+  }, 0 )
+return totalPokemons
+  console.log(totalPokemons)
+}
+
+console.log(porcentajeTotalPokemones)
