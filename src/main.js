@@ -8,9 +8,7 @@ import {
   filterByType,
   filterByRegion,
   sortPokemons,
-  sortPokemonsInvertido,
   sortNumber,
-  sortNumberInverted,
   findById
 } from "./js/data.js";
 import { cleanClass, validateInput } from "./js/functions.js";
@@ -43,7 +41,7 @@ const searchInputName = document.getElementById("input-search-name");
 allCardTypes.forEach((cardType) => {
   cardType.addEventListener("click", () => {
     const nameType = cardType.className.split(" ")[0];
-
+    
     //limpiar la clase borderRed asi en cada click la elimina
     cleanClass(allCardTypes);
     //añade la clase borderRed asi en cada click la elimina
@@ -144,7 +142,7 @@ sortSelect.addEventListener("change", () => {
       showPokemons(sortPokemons(copyDataPokemon));
       break;
     case "z-a":
-      showPokemons(sortPokemonsInvertido(copyDataPokemon));
+      showPokemons(sortPokemons(copyDataPokemon).reverse());
       break;
   }
   showModal();
@@ -160,7 +158,7 @@ sortNumberSelect.addEventListener("change", () => {
       showPokemons(sortNumber(copyDataPokemon));
       break;
     case "MAX-00":
-      showPokemons(sortNumberInverted(copyDataPokemon));
+      showPokemons(sortNumber(copyDataPokemon).reverse());
       break;
   }
   showModal();

@@ -2,9 +2,7 @@ import {
   filterByType,
   filterByRegion,
   sortPokemons,
-  sortPokemonsInvertido,
   sortNumber,
-  sortNumberInverted,
   findById
 } from "../src/js/data.js";
 
@@ -181,42 +179,43 @@ let sortDataAZ = [
     },
   },
 ];
+let sortDataZA = [
+  {
+    num: "010",
+    name: "caterpie",
+    type: "bug",
+    generation: {
+      num: "generation i",
+      name: "kanto",
+    },
+  },
+  {
+    num: "001",
+    name: "bulbasaur",
+    type: ["grass", "poison"],
+    generation: {
+      num: "generation i",
+      name: "kanto",
+    },
+  },
+];
+
 
 describe("sortPokemons", () => {
   it("es una function", () => {
     expect(typeof sortPokemons).toBe("function");
   });
 
-  it("Debe retornar ondenados de A-Z", () => {
+  it("Debe retornar ordenados de A-Z", () => {
     expect(sortPokemons(sortData)).toEqual(sortDataAZ);
   });
+
+  it("Should return an array of Z-A", () => {
+    expect(sortPokemons(sortData).reverse()).toEqual(sortDataZA)
+  })
 });
 
-//TEST SORT Z-A
 
-let arraySort = [
-  { name: "karla" },
-  { name: "gaby" },
-  { name: "david" },
-  { name: "zayda" },
-];
-
-let arraySortZtoA = [
-  { name: "zayda" },
-  { name: "karla" },
-  { name: "gaby" },
-  { name: "david" },
-];
-
-describe("sortPokemonsInvertido", () => {
-  it("es una function", () => {
-    expect(typeof sortPokemonsInvertido).toBe("function");
-  });
-
-  it("Debe retornar ondenados de Z-A", () => {
-    expect(sortPokemonsInvertido(arraySort)).toEqual(arraySortZtoA);
-  });
-});
 
 //TEST SORT NÚMEROS
 
@@ -234,6 +233,13 @@ let arraySortMinMax = [
   { num: "120" },
 ];
 
+let arraySortMaxMin = [
+  { num: "120" },
+  { num: "024" },
+  { num: "012" },
+  { num: "003" },
+];
+
 describe("sortNumber", () => {
   it("es una function", () => {
     expect(typeof sortNumber).toBe("function");
@@ -242,35 +248,13 @@ describe("sortNumber", () => {
   it("Debe retornar ondenados de min al max", () => {
     expect(sortNumber(arraySortNumbers)).toEqual(arraySortMinMax);
   });
+
+  it("Should return an array of max to min", () =>{
+    expect(sortNumber(arraySortNumbers).reverse()).toEqual(arraySortMaxMin)
+  })
 });
 
  
-//TEST SORT NÚMEROS INVERTIDOS
-
-let arraySortNumbersInverted = [
-  { num: "003" },
-  { num: "020" },
-  { num: "500" },
-  { num: "090" }
-];
-
-let arraySortMaxMim = [
-  { num: "500" },
-  { num: "090" },
-  { num: "020" },
-  { num: "003" }
-];
-
-
-describe("sortNumberInverted", () => {
-  it("es una function", () => {
-    expect(typeof sortNumberInverted).toBe("function");
-  });
-
-  it("Debe retornar ondenados de max al min", () => {
-    expect(sortNumberInverted(arraySortNumbersInverted)).toEqual(arraySortMaxMim);
-  });
-});
 
 // AQUI VA EL TEST DE FIND
 
