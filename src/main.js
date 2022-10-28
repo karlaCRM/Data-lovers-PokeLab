@@ -92,7 +92,6 @@ searchInputName.addEventListener("input", () => {
 const filterXRegion = document.getElementById("regionName");
 let variableExtraKanto;
 let variableExtraJohto;
-
 //console.log(filterXRegion)
 
 filterXRegion.addEventListener("change", () => {
