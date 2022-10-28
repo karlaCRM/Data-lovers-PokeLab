@@ -59,7 +59,10 @@ Se muestran aquí el desarrollo que se siguio en el orden en que fue llevado a c
 ![img](src/assets/img-readme/14.png)
 ![img](src/assets/img-readme/15.png)
 
+### ***Da click en la siguiente imagen para ver el video del funcionamiento de la página***
 [![Alt text](src/assets/img-readme/13.png)](https://www.youtube.com/watch?v=60dK7bRt_1o)
+
+gracias <3
 
 ### Testeos de usabilidad
 
