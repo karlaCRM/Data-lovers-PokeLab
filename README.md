@@ -17,6 +17,7 @@
 
 ## 1. Resumen del proyecto
 
+
 En este proyecto **se nos hizo el planteamiento de realizar una página web donde manipularamos un conjunto de data, desde mostrarla, filtrarla, ordenarla, etc., todo con un diseño responsive y pensando en las necesidades de los posibles usuarios** 
 
 Nuestra elección de tema fue **"Pokemon"** y el primer paso consistio en el trabajo de investigación de campo para conocer las ofertas de páginas o aplicaciones que ya existen y realizan funciones similares a las que queríamos lograr. 
@@ -39,34 +40,22 @@ A continuación, se despliega cada una de nuestras **Historias de Usuario** (est
 
 ![img](src/assets/img-readme/1.png)   ![img](src/assets/img-readme/2.png)
 ![img](src/assets/img-readme/3.png)   ![img](src/assets/img-readme/4.png)
+![img](src/assets/img-readme/5.png)   ![img](src/assets/img-readme/6.png)
+![img](src/assets/img-readme/7.png)   ![img](src/assets/img-readme/8.png)
 
 
-## 5. Criterios de aceptación mínimos del proyecto
+## 4. Prototipado de **alta calidad**
 
-Los criterios para considerar que has completado este proyecto son:
+Se utiliza FIGMA para el prototipado de ALTA CALIDAD.
 
-### Definición del producto
+* Se opta por un diseño **no** saturado, con colores neutros.
+* Se da color que distingue a cada **tipo** de pokemon y este código de color también se planea utilizar en los modal y las tarjetas al momento de especificar el tipo de pokemon (así tendrán una referencia visual más rápida).
+* Se realiza el prototipado de tres distintos tipos de modal.
 
-Documenta brevemente tu trabajo en el archivo `README.md` de tu repositorio,
-contándonos cómo fue tu proceso de diseño y cómo crees que el producto resuelve
-el problema (o problemas) que tiene tu usuario.
+![img](src/assets/img-readme/10.png)   ![img](src/assets/img-readme/11.png)
 
-### Historias de usuario
+### Objetivo de la interfaz (expresado en el prototipo de **alta calidad**)
 
-Una vez que entiendas las necesidades de tus usuarios, escribe las [Historias
-de Usuario](https://es.wikipedia.org/wiki/Historias_de_usuario) que representen
-todo lo que el usuario necesita hacer/ver. Las **Historias de Usuario** deben
-ser el resultado de tu proceso de investigación o _research_ de tus usuarios.
-
-Asegúrate de incluir la definición de terminado (_definition of done_) y los
-Criterios de Aceptación para cada una.
-
-En la medida de lo posible, termina una historia de usuario antes de pasar
-a la siguiente (Cumple con Definición de Terminado + Criterios de Aceptación).
-
-#### [Ejemplo de Historia de usuario]
-
-Yo como usuario [visitante del sitio] quiero poder VER todos lxs personajes/películas/deportistas para familiarizarme.
 
 **Criterios de Aceptación. Edita/agrega de acuerdo a tu implementación exactamente:**
 
