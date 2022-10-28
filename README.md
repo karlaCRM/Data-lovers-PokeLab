@@ -58,8 +58,8 @@ Se muestran aquí el desarrollo que se siguio en el orden en que fue llevado a c
 ![img](src/assets/img-readme/13.png)
 ![img](src/assets/img-readme/14.png)
 ![img](src/assets/img-readme/15.png)
-[video](src/assets/img-readme/screen-recording.webm)
 
+[![Alt text](https://youtu.be/60dK7bRt_1o)
 
 ### Testeos de usabilidad
 
