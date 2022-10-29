@@ -9,7 +9,7 @@ import {
   filterByRegion,
   sortPokemons,
   sortNumber,
-  findById
+  findById,
 } from "./js/data.js";
 import { cleanClass, validateInput } from "./js/functions.js";
 
@@ -57,7 +57,11 @@ allCardTypes.forEach((cardType) => {
     subTitlePokemonsLength.innerText = `(${copyDataPokemon.length} results)`
 
     /*aca reseteamos el selector por región a disabled selected */
-    document.getElementById("regionName").selectedIndex = 1;
+    document.getElementById("regionName").selectedIndex = 0;
+    document.getElementById("sort-by-Num").selectedIndex = 0;
+    document.getElementById("sort-pokemons-by").selectedIndex=0;
+    document.getElementById("statistics-type-pokemon").selectedIndex = 0;
+
 
     //para limpiar el input del buscador.
     searchInputName.value = "";

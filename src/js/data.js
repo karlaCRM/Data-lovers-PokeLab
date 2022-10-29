@@ -1,5 +1,6 @@
 // estas funciones relizan solo una cosa.
 
+
 export const filterByType = (nameType, pokemonData) => {
   const filterType = pokemonData.filter((pokemon) =>
     pokemon.type.includes(nameType)
@@ -16,8 +17,8 @@ export const filterByRegion = (selection, pokemonData) => {
 
 //*aqui va el sort*/
 
-export const sortPokemons = (dataHarrypotter) => {
-  let copyarray = [...dataHarryPotter];
+export const sortPokemons = (pokemonData) => {
+  let copyarray = [...pokemonData];
   const pokemonSort = copyarray.sort((prev, next) => {
     if (prev.name < next.name) {
       return -1;
@@ -47,14 +48,3 @@ export const findById = (id, pokemonData) => {
   console.log(findbyidPokemon);
   return findbyidPokemon;
 };
-
-
-const porcentajeTotalPokemones = (nameType, pokemonData) =>{
-  const totalPokemons = pokemonData.reduce((pokemon, currentvalue) =>{
-    return acumulador + currentvalue
-  }, 0 )
-return totalPokemons
-  console.log(totalPokemons)
-}
-
-console.log(porcentajeTotalPokemones)
