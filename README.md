@@ -23,11 +23,10 @@ A la par se comenzo a realizar el prototipado a mano de como nos gustaría que s
 
 A continuación, se despliega cada una de nuestras **Historias de Usuario** (estas surgen a partir de cuestionar a diferentes usuarios sobre que es lo que les gustaría ver en una página de Pokemon y que tanto conocen del tema.)
 
-![img](src/assets/img-readme/0.png)
-![img](src/assets/img-readme/1.png)   ![img](src/assets/img-readme/2.png)
-![img](src/assets/img-readme/3.png)   ![img](src/assets/img-readme/4.png)
-![img](src/assets/img-readme/5.png)   ![img](src/assets/img-readme/6.png)
-![img](src/assets/img-readme/7.png)   ![img](src/assets/img-readme/8.png)
+![img](src/assets/img-readme/1.png)
+![img](src/assets/img-readme/2.png)   ![img](src/assets/img-readme/3.png)
+![img](src/assets/img-readme/4.png)   ![img](src/assets/img-readme/5.png)
+![img](src/assets/img-readme/6.png) 
 
 
 ## 4. Prototipado de **alta calidad**
@@ -69,10 +68,10 @@ gracias <3
 Se realizo un último testeo de usabilidad con el producto en un 90% terminado para cersiorarnos que el usuario pudiera manipularlo sin perderse o encontrar posibles fallas. 
 
 
-
 ## 5. Trello:
 
 Antes de comenzar el prototipado de Alta calidad  se realizo en trello el esquema de tareas/trabajo que realizariamos, dividiendo las tareas mediante etiquetas por historias de usuario y cada paso a seguir para considerarlas terminadas. 
 
 
 ![img](src/assets/img-readme/16.png)
+![img](src/assets/img-readme/7.png)

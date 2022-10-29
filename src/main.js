@@ -56,12 +56,11 @@ allCardTypes.forEach((cardType) => {
     showModal();
     subTitlePokemonsLength.innerText = `(${copyDataPokemon.length} results)`
 
-    /*aca reseteamos el selector por región a disabled selected */
+    /*aca reseteamos el selector por región y los sort a disabled selected */
     document.getElementById("regionName").selectedIndex = 0;
     document.getElementById("sort-by-Num").selectedIndex = 0;
-    document.getElementById("sort-pokemons-by").selectedIndex=0;
+    document.getElementById("sort-pokemons-by").selectedIndex = 0;
     document.getElementById("statistics-type-pokemon").selectedIndex = 0;
-
 
     //para limpiar el input del buscador.
     searchInputName.value = "";
