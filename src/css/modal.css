@@ -16,10 +16,10 @@
 .modal-container {
   background-color: white;
   margin: auto;
-  width: 90%;
-  height: 95%;
   max-width: 600px;
   max-height: 750px;
+  width: 90%;
+  height: 95%;
   position: relative;
   display: flex;
   flex-direction: column;
