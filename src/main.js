@@ -9,7 +9,7 @@ import {
   filterByRegion,
   sortPokemons,
   sortNumber,
-  findById
+  findById,
 } from "./js/data.js";
 import { cleanClass, validateInput } from "./js/functions.js";
 
