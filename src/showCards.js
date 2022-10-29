@@ -46,7 +46,7 @@ export let showPokemonFeature = (objectData) => {
     <div id="generationId">
         <span id="id-pokemon">${objectData.num}</span>
         <span id="generation-pokemon">${objectData.generation.name}</span>
-    </div>
+        </div>
       <h2 id="name-pokemon">${objectData.name}</h2>
       <div class="img-pokemon-modal">
         <div>
