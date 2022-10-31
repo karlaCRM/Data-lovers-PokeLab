@@ -3,7 +3,8 @@ import {
   filterByRegion,
   sortPokemons,
   sortNumber,
-  findById
+  findById,
+  reductionXType,
 } from "../src/js/data.js";
 
 let randomArrayToTestTheTest = [
@@ -277,5 +278,13 @@ describe("findById", () =>{
   
   it("deberia retornar el primer elemento que coincida con el id del pokemon en especifico", () =>{
     expect(findById("011", randomArrayToTestTheTest)).toEqual(findResult);
+  });
+})
+
+//aqui va test del REDUCE
+
+describe("reductionXType", () => {
+  it("es una function", () => {
+    expect(typeof reductionXType).toBe("function");
   });
 })
