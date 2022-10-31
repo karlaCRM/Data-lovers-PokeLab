@@ -1,36 +1,18 @@
-/*import 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js'*/
+import 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js'
 import data from "../data/pokemon/pokemon.js"
 import {reductionXType} from './data.js';
 
 
-
+/* variables para  chart.js */
 const arrayOfTypes = data.pokemon.map((item) => item.type).flat()
 const reductionOfArray = reductionXType(arrayOfTypes)
 const labelsXType= Object.keys(reductionOfArray)
 const valuesXType= Object.values(reductionOfArray)
 
-let typesStadistic= `<p> Hay ${reductionOfArray.grass} pokemones tipo Grass</p>
-<p> Hay ${reductionOfArray.bug} pokemones tipo Bug</p>
-<p> Hay ${reductionOfArray.dark} pokemones tipo Dark</p>
-<p> Hay ${reductionOfArray.dragon} pokemones tipo Dragon</p>
-<p> Hay ${reductionOfArray.electric} pokemones tipo Electric</p>
-<p> Hay ${reductionOfArray.fairy} pokemones tipo Fairy</p>
-<p> Hay ${reductionOfArray.fighting} pokemones tipo Fighting</p>
-<p> Hay ${reductionOfArray.fire} pokemones tipo Fire</p>
 
-
-
-
-
-`
-console.log(typesStadistic)
-
-
-//console.log(values)
-
-/*const canvas = document.getElementById("canvas");
+const canvas = document.getElementById("canvas");
  //mostrarmos grafico de barras.
-const chartGraphics = new Chart(canvas,  {
+new Chart(canvas,  {//eslint-disable-line
     type: 'bar',
     data: {
         labels: labelsXType,
@@ -89,4 +71,9 @@ const chartGraphics = new Chart(canvas,  {
     }
 });
 
-export default chartGraphics;*/
+/*mostrar información */
+const containerStadistic = document.getElementById("show-info-type-pokemon")
+
+for (const prop in reductionOfArray) {
+    containerStadistic.innerHTML += `<p class="${prop} info-stidistic">${prop}: <span class="value">${reductionOfArray[prop]}</span></p>`;
+}

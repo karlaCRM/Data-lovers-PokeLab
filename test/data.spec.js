@@ -281,10 +281,26 @@ describe("findById", () =>{
   });
 })
 
-//aqui va test del REDUCE
+//TEST REDUCE TYPE POKEMON
+const arraydata = [
+  "gato", "perro", "raton", "perro", "raton", "conejo","gato", "perro", "hamster", "perro"
+];
+
+const objData ={
+  "gato": 2,
+  "perro": 4,
+  "raton": 2,
+  "conejo": 1,
+  "hamster":1
+}
 
 describe("reductionXType", () => {
   it("es una function", () => {
     expect(typeof reductionXType).toBe("function");
   });
-})
+
+  it("deberia retornar un objeto con propiedades y valor", () =>{
+    expect(reductionXType(arraydata)).toEqual(objData);
+  });
+
+});
