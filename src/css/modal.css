@@ -17,7 +17,7 @@
   background-color: white;
   margin: auto;
   max-width: 600px;
-  max-height: 750px;
+  max-height: 650px;
   width: 90%;
   height: 95%;
   position: relative;
@@ -328,7 +328,7 @@
   .modal-container {
     width: 100%;
     max-width: 80%;
-    min-height: 82vh;
+    min-height: 80vh;
     height: 100%;
     gap: 20px;
   }
