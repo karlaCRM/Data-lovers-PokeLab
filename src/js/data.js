@@ -48,3 +48,17 @@ export const findById = (id, pokemonData) => {
   console.log(findbyidPokemon);
   return findbyidPokemon;
 };
+
+//*aqui va el método reduce*/
+
+export const reduceOfTypes = (objetoData) =>{
+  const arrayWithReduce = objetoData.reduce((obj, element)=>{
+    if(obj[element] != undefined){
+      obj[element] += 1;
+    }else{
+      obj[element] = 1;
+    }
+    return obj
+  }, {});
+  return arrayWithReduce;
+}

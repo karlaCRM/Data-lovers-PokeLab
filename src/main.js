@@ -10,6 +10,7 @@ import {
   sortPokemons,
   sortNumber,
   findById,
+  reduceOfTypes
 } from "./js/data.js";
 import { cleanClass, validateInput } from "./js/functions.js";
 
@@ -186,3 +187,35 @@ function showModal() {
     });
   });
 }
+
+
+//*FUNCION MOSTRAR ESTADISTICA EN MODAL/
+/*Pruebas para traer data de estadistica en un nuevo array con map()*/
+const arrayOfTypes = data.pokemon.map(element => element.type);
+//console.log(arrayofTypes);
+
+// el metodo flat convierte un array anidado en un array plano en otras palabras en un solo array
+const onlyArray = arrayOfTypes.flat(); 
+//console.log(uniqueArray);
+reduceOfTypes(onlyArray);
+console.log(reduceOfTypes(onlyArray));
+
+
+//?MOSTRAR MODAL DE ESTADISTICA/
+
+const statisticsSelect = document.getElementById("statistics-type-pokemon");
+const closeModalStatistics = document.getElementById("close-statistics");
+
+statisticsSelect.addEventListener("change", () => {
+  switch (statisticsSelect.value) {
+    case "statistics-by-type":
+      //console.log("si es este")
+      document.querySelector("#modal2").style.display = "flex";
+      break;
+  }
+
+  closeModalStatistics.addEventListener("click", () => {
+    document.querySelector("#modal2").style.display = "none"; 
+  });
+
+});
