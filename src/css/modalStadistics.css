@@ -8,13 +8,12 @@
     z-index: 5;
     background: rgba(25, 26, 32, 0.9);
   }
-  
   .modal-container2 {
     background-color: white;
     margin: auto;
-    max-width: 600px;
-    max-height: 750px;
-    width: 80%;
+    max-width: 660px;
+    max-height: 780px;
+    width: 90%;
     height: 70%;
     position: relative;
     display: flex;
@@ -22,10 +21,10 @@
     align-items: center;
     gap: 20px;
     border-radius: 15px;
-    /*border: 5px solid #5b5b5b;*/
+    /*border: 5px solid #5B5B5B;*/
     font-family: "Poppins", sans-serif;
+    padding: 20px;
   }
-  
   .close-statistics-modal {
     width: 10%;
     position: absolute;
@@ -34,7 +33,6 @@
     transition: 2s;
     z-index: 100;
   }
-
   .close-statistics-modal:hover {
     cursor: pointer;
     width: 12%;
