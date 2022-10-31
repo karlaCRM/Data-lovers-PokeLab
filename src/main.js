@@ -12,6 +12,7 @@ import {
   findById,
 } from "./js/data.js";
 import { cleanClass, validateInput } from "./js/functions.js";
+import './js/graphics.js';
 
 //* Llamamos a la función que mostrara la data*/
 const subTitlePokemonsLength = document.getElementById("subtitle-result-pokemon");
@@ -41,7 +42,7 @@ const searchInputName = document.getElementById("input-search-name");
 allCardTypes.forEach((cardType) => {
   cardType.addEventListener("click", () => {
     const nameType = cardType.className.split(" ")[0];
-    
+    console.log(nameType)
     //limpiar la clase borderRed asi en cada click la elimina
     cleanClass(allCardTypes);
     //añade la clase borderRed asi en cada click la elimina
@@ -186,3 +187,25 @@ function showModal() {
     });
   });
 }
+
+//?MOSTRAR MODAL DE ESTADISTICA/
+const statisticsSelect = document.getElementById("statistics-type-pokemon");
+const closeModalStatistics = document.getElementById("close-statistics");
+statisticsSelect.addEventListener("change", () => {
+  switch (statisticsSelect.value) {
+    case "statistics-by-type":
+      //console.log("si es este")
+      document.querySelector("#modal2").style.display = "flex";
+      break;
+  }
+  closeModalStatistics.addEventListener("click", () => {
+    document.querySelector("#modal2").style.display = "none";
+    document.getElementById("statistics-type-pokemon").selectedIndex = 0;
+    
+  });
+});
+
+
+
+
+
