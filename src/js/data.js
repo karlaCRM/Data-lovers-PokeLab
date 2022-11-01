@@ -45,7 +45,7 @@ export const sortNumber = (pokemonData)=>{
 export const findById = (id, pokemonData) => {
   const findbyidPokemon = pokemonData.find(
   (pokemon)=> pokemon.num == id);
-  console.log(findbyidPokemon);
+  //console.log(findbyidPokemon);
   return findbyidPokemon;
 };
 

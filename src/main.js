@@ -9,7 +9,7 @@ import {
   filterByRegion,
   sortPokemons,
   sortNumber,
-  findById,
+  findById
 } from "./js/data.js";
 import { cleanClass, validateInput } from "./js/functions.js";
 import './js/graphics.js';
@@ -42,7 +42,7 @@ const searchInputName = document.getElementById("input-search-name");
 allCardTypes.forEach((cardType) => {
   cardType.addEventListener("click", () => {
     const nameType = cardType.className.split(" ")[0];
-    console.log(nameType)
+    //console.log(nameType)
     //limpiar la clase borderRed asi en cada click la elimina
     cleanClass(allCardTypes);
     //añade la clase borderRed asi en cada click la elimina
@@ -113,7 +113,7 @@ filterXRegion.addEventListener("change", () => {
         showPokemons(copyDataPokemon);
         subTitlePokemonsLength.innerText = `(${copyDataPokemon.length} results)`
       }else{
-        alert ("Para ver pokemones Kanto refresca el buscador poniendo All Generations");
+        alert (`To filter Kanto, refresh the search engine by selecting "All Generations".`);
       }
       break;
     case "johto":
@@ -123,7 +123,7 @@ filterXRegion.addEventListener("change", () => {
         showPokemons(copyDataPokemon);
         subTitlePokemonsLength.innerText = `(${copyDataPokemon.length} results)`
       }else{
-        alert ("Para ver pokemones Johto refresca el buscador poniendo All Generations");
+        alert (`To filter Johto, refresh the search engine by selecting "All Generations".`);
       }
       break;
   }

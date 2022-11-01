@@ -3,7 +3,7 @@ import data from "../data/pokemon/pokemon.js"
 import {reductionXType} from './data.js';
 
 
-
+/* variables para  chart.js */
 const arrayOfTypes = data.pokemon.map((item) => item.type).flat()
 const reductionOfArray = reductionXType(arrayOfTypes)
 const labelsXType= Object.keys(reductionOfArray)
@@ -12,7 +12,7 @@ const valuesXType= Object.values(reductionOfArray)
 
 const canvas = document.getElementById("canvas");
  //mostrarmos grafico de barras.
-new Chart(canvas,  { // eslint-disable-line
+    new Chart(canvas,  {// eslint-disable-line
     type: 'bar',
     data: {
         labels: labelsXType,
@@ -70,3 +70,10 @@ new Chart(canvas,  { // eslint-disable-line
         }
     }
 });
+
+/*mostrar información */
+const containerStadistic = document.getElementById("show-info-type-pokemon")
+
+for (const prop in reductionOfArray) {
+    containerStadistic.innerHTML += `<p class="${prop} info-stidistic">${prop}: <span class="value">${reductionOfArray[prop]}</span></p>`;
+}
